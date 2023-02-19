@@ -1,0 +1,18 @@
+<%- include("partials/header"); %> 
+
+<!-- We have used bootstrap classes but we do not need to import the bootstrap CSS and JS, because we have already done it
+in header file. -->
+
+<h1 class="content-heading">Compose</h1>
+<form class="content-para" action="/compose" method="post">
+    <div class="mb-3">
+        <label for="" class="form-label" style="font-size: 22px;">Title</label>
+        <input class="form-control" type="text" name="postTitle" id=""><br>
+        <label for="" class="form-label" style="font-size: 22px;">Post</label>
+        <textarea class="form-control" name="postbody" id="" cols="30" rows="5"></textarea>
+    </div>
+    <button type="submit" name="publish-button" class="btn btn-primary">Publish</button>
+</form>
+
+<%- include("partials/footer") %>
+

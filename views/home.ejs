@@ -1,0 +1,23 @@
+<%- include("partials/header") %> 
+
+<div class="content-heading">
+    <h1 style="text-align: center;">One Stop destination to Add Personalized Blogs</h1>
+</div>
+<p class="content-para"><%= homeContent %>  </p>
+<br>
+<br>
+
+
+<div>
+    <%  posts.forEach(function(post){ %>
+
+        <h1 class="content-heading2"><%=post.title%></h1>
+        <p class="content-para2"><%=post.content.substring(0, 100) + " ..."%><a href="/posts/<%=post._id%>">Read More</a></p>
+    
+    
+    <% }) %>
+    
+</div>
+
+
+<%- include("partials/footer") %>
