@@ -56,38 +56,6 @@ app.get("/contact", function(req,res){
 })
 
 
-//for ADD Blog Button in Navbar
-app.get("/compose", function(req, res){
-  res.render("compose");
-});
-
-
-
- app.get(["/posts/:postId"], function(req, res){                                //EJS Format to go around pages by adding the url you wish
-   const requestedPostId= req.params.postId;                                    //use of lodash
-   Post.findOne({_id: requestedPostId}, function(err, post){
-    res.render("blog", {title: post.title, content: post.content});
-   })
- });
-
-
-//for compose page
-app.post("/compose", function(req,res){                          
-  const post= new Post(
-  {
-    title: req.body.postTitle,
-    content: req.body.postbody
-  });
-  
-  post.save(function(err){
-    if(!err){
-      res.redirect("/");
-    }else{
-      console.log("your error is: "+ err);
-    }
-  });
-});
-
 
 app.post("/delete", function(req, res){
   id = req.params._id;
